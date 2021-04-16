@@ -62,4 +62,26 @@ class PalindromeValidatorTest {
 		//Then
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void Given_FourLetterPalindromeString_When_ValidatingPalindrome_Then_True() {
+		//Given
+		String string = "abba";
+		boolean expectedResult = true;
+		//When
+		boolean actualResult = validator.validate(string);
+		//Then
+		assertEquals(expectedResult, actualResult);
+	}
+	
+	@Test
+	void Given_FourLetterNonPalindromeString_When_ValidatingPalindrome_Then_False() {
+		//Given
+		String string = "abcd";
+		boolean expectedResult = false;
+		//When
+		boolean actualResult = validator.validate(string);
+		//Then
+		assertEquals(expectedResult, actualResult);
+	}
 }
